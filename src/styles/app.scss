@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: $light-grey; 
+    
+}
+::-webkit-scrollbar-thumb {
+    background: $grey; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: $dark-grey; 
+}
+.app {
+    width: 100vw;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $light-grey;
+    .search {
+        margin-top: 50px;
+    }
+    .content {
+        margin-top: 50px;
+        padding: 0 15%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .movie-card {
+            flex: 0 0 30%;
+        }
+    }
+}

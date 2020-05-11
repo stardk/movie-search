@@ -1,0 +1,65 @@
+.movie-card {
+    background-color: $white;
+    border: 2px solid transparent;
+    padding: 10px 10px 30px 10px;
+    max-width: 300px;
+    height: 370px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    &:hover {
+        border-color: $blue;
+    }
+    .movie-info {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .movie-info__poster {
+            height: 150px;
+            width: auto;
+            transition: all .3s ease;
+            &:hover {
+                transform: scale(2);
+            }
+        }
+        .movie-info__title {
+            margin-top: 5px;
+            text-align: center;
+            font-weight: 500;
+            color: $black;
+            text-decoration: none;
+            font-size: 24px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .movie-info__year {
+            margin-top: 5px;
+            font-size: 18px;
+            color: $grey;
+        }
+        .movie-info__type {
+            margin-top: 5px;
+            font-size: 16px;
+            color: $grey;
+        }
+    }
+    .add-to-favs {
+        color: $white;
+        background-color: $blue;
+        padding: 5px;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover {
+            color: $blue;
+            background-color: transparent;
+            border-color: $blue;
+        }
+    }
+}

@@ -7,7 +7,8 @@
         .switch(:class="{ toFavs: switchedToFavs }" @click="switchedToFavs = !switchedToFavs")
         span My favs
     .home-content
-      MovieCard.movie-card(v-for="(movie, index) in curMovies" :key="index" :movie="movie" @addToFavs="addToFavs(movie)")
+      MovieCard.movie-card(v-for="(movie, index) in curMovies" :key="index" 
+      :movie="movie" :isFavs="switchedToFavs" @addToFavs="addToFavs(movie)" @deleteFromFavs="deleteFromFavs(movie)")
 </template>
 
 <script>
@@ -50,6 +51,10 @@ export default {
     addToFavs(movie) {
       let index = this.favs.findIndex(item => item.imdbID === movie.imdbID);
       if (index === -1) this.favs.push(movie);
+    },
+    deleteFromFavs(movie) {
+      this.favs = this.favs.filter(item => item.imdbID !== movie.imdbID);
+      this.curMovies = this.favs;
     }
   },
   watch: {

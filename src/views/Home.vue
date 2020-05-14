@@ -38,7 +38,7 @@ export default {
       if (!this.switchedToFavs) { 
         this.$store.dispatch('searchMovies', { searchText })
         .then(() => {
-          this.curMovies = this.$store.getters.getMovies;
+          this.curMovies = this.getFoundMovies();
         })
       }
       else {
@@ -47,6 +47,9 @@ export default {
           return searchExp.test(movie.Title);
         });
       }
+    },
+    getFoundMovies() {
+      return this.$store.getters.getMovies;
     },
     addToFavs(movie) {
       let index = this.favs.findIndex(item => item.imdbID === movie.imdbID);
@@ -62,7 +65,7 @@ export default {
       localStorage.movies = JSON.stringify(newFavsArray);
     },
     switchedToFavs(newMode) {
-      this.curMovies = newMode ? this.favs : [];
+      this.curMovies = newMode ? this.favs : this.getFoundMovies();
     }
   },
 }

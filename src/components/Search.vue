@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import SearchIcon from '@/icons/SearchIcon.vue';
+import SearchIcon from '@/components/icons/SearchIcon.vue';
 
 export default {
   name: 'Search',

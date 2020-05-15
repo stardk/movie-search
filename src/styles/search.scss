@@ -7,6 +7,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: $width-s) {
+    width: 80%;
+  }
   .search-input {
     width: 80%;
     height: 100%;

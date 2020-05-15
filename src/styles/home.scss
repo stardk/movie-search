@@ -10,6 +10,11 @@
         margin-top: 50px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        @media (max-width: $width-m) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         .home-header__search {
             grid-column: 2 / 3;
         }
@@ -18,6 +23,9 @@
             display: flex;
             justify-content: center;
             align-self: center;
+            @media (max-width: $width-m) {
+                margin-top: 20px;
+            }
             span {
                 color: $black;
                 font-weight: bold;
@@ -58,8 +66,17 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        @media (max-width: $width-s) {
+            padding: 0;
+        }
         .movie-card {
             flex: 0 0 30%;
+            @media (min-width: $width-s) and (max-width: $width-m) {
+                flex: 0 0 100%;
+            }
+            @media (min-width: $width-m) and (max-width: $width-l) {
+                flex: 0 0 50%;
+            }
         }
     }
 }

@@ -11,8 +11,8 @@ export default {
 
 <style lang="scss">
 @import '@/styles/colors.scss';
-@import '@/styles/home.scss';
 @import '@/styles/main.scss';
+@import '@/styles/home.scss';
 @import '@/styles/search.scss';
 @import '@/styles/movie-card.scss';
 

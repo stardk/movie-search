@@ -5,7 +5,8 @@
             a.movie-info__title(:href="imdbLink + movie.imdbID" target="_blank") {{ movie.Title }}
             span.movie-info__year {{ movie.Year }}
             span.movie-info__type {{ movie.Type | capitalize }}
-        button.favs-add(@click="$emit('addToFavs')" v-if="!isFavs") Add to favs
+        button.favs-added(@click="$emit('deleteFromFavs')" v-if="!isFavsMode && inFavs") In favs!
+        button.favs-add(@click="$emit('addToFavs')" v-else-if="!isFavsMode") Add to favs
         button.favs-delete(@click="$emit('deleteFromFavs')" v-else) Delete
 </template>
 
@@ -18,7 +19,10 @@ export default {
         movie: {
             type: Object
         },
-        isFavs: {
+        isFavsMode: {
+            type: Boolean
+        },
+        inFavs: {
             type: Boolean
         }
     },

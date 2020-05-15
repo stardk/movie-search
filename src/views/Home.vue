@@ -8,7 +8,7 @@
         span My favs
     .home-content
       MovieCard.movie-card(v-for="(movie, index) in curMovies" :key="index" 
-      :movie="movie" :isFavs="switchedToFavs" @addToFavs="addToFavs(movie)" @deleteFromFavs="deleteFromFavs(movie)")
+      :movie="movie" :isFavsMode="switchedToFavs" :inFavs="incudedInFavs(movie.imdbID)" @addToFavs="addToFavs(movie)" @deleteFromFavs="deleteFromFavs(movie)")
 </template>
 
 <script>
@@ -57,7 +57,10 @@ export default {
     },
     deleteFromFavs(movie) {
       this.favs = this.favs.filter(item => item.imdbID !== movie.imdbID);
-      this.curMovies = this.favs;
+      if (this.switchedToFavs) this.curMovies = this.favs;
+    },
+    incudedInFavs(movieID) {
+      return this.favs.some(item => item.imdbID === movieID);
     }
   },
   watch: {

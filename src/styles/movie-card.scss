@@ -69,4 +69,7 @@
     .favs-delete {
         @include button-base($red);
     }
+    .favs-added {
+        @include button-base($green);
+    }
 }

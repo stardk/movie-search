@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import capitalizeFunc from '@/filters/capitalize.js';
+import capitalizeFunc from '@/libs/capitalize.js';
 
 export default {
     name: 'MovieCard',

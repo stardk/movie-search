@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import cacheStore from '@/libs/cache.js';
 import Search from '@/components/Search.vue';
 import MovieCard from '@/components/MovieCard.vue';
 
@@ -29,9 +30,7 @@ export default {
     }
   },
   mounted () {
-    if (localStorage.movies) {
-      this.favs = JSON.parse(localStorage.movies);
-    };
+    this.favs = cacheStore.getItem('movies') || [];
   },
   methods: {
     startSearch(searchText) {
@@ -65,7 +64,7 @@ export default {
   },
   watch: {
     favs(newFavsArray) {
-      localStorage.movies = JSON.stringify(newFavsArray);
+      cacheStore.setItem('movies', newFavsArray);
     },
     switchedToFavs(newMode) {
       this.curMovies = newMode ? this.favs : this.getFoundMovies();

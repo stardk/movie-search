@@ -2,7 +2,7 @@
     .movie-card
         .movie-info
             img.movie-info__poster(:src="movie.Poster")
-            a.movie-info__title(:href="imdbLink + movie.imdbID" target="_blank") {{ movie.Title }}
+            a.movie-info__title(:href="imdbLink + movie.imdbID" :title="movie.Title" target="_blank") {{ movie.Title | truncate }}
             span.movie-info__year {{ movie.Year }}
             span.movie-info__type {{ movie.Type | capitalize }}
         button.favs-added(@click="$emit('deleteFromFavs')" v-if="!isFavsMode && inFavs") In favs!
@@ -12,6 +12,7 @@
 
 <script>
 import capitalizeFunc from '@/libs/capitalize.js';
+import truncateFunc from '@/libs/truncate.js'
 
 export default {
     name: 'MovieCard',
@@ -32,8 +33,11 @@ export default {
         }
     },
     filters: {
-        capitalize: function(value) {
+        capitalize: function (value) {
             return capitalizeFunc(value);
+        },
+        truncate: function (value) {
+            return truncateFunc(value);
         }
     }
 }

@@ -6,77 +6,77 @@
     flex-direction: column;
     align-items: center;
     background-color: $light-grey;
-    .home-header {
-        margin-top: 50px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        @media (max-width: $width-m) {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .home-header__search {
-            grid-column: 2 / 3;
-        }
-        .home-header__modes {
-            grid-column: 3 / 4;
-            display: flex;
-            justify-content: center;
-            align-self: center;
-            @media (max-width: $width-m) {
-                margin-top: 20px;
-            }
-            span {
-                color: $black;
-                font-weight: bold;
-                font-size: inherit;
-            }
-            .switch {
-                background-color: $blue;
-                margin: 0 5px;
-                width: 60px;
-                height: 26px;
-                border-radius: 26px;
-                position: relative;
-                cursor: pointer;
-                transition: all .6s ease;
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 2px;
-                    transform: translateX(4px);
-                    background-color: $white;
-                    height: 21px;
-                    width: 21px;
-                    border-radius: 50%;
-                    transition: all .4s ease;
-                }
-            }
-            .toFavs {
-                background-color: $green;
-                &::before {
-                    transform: translateX(34px);
-                }
-            }
-        }
-    }
-    .home-content {
-        margin-top: 50px;
-        padding: 0 15%;
+}
+.home-header {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @media (max-width: $width-m) {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        @media (max-width: $width-s) {
-            padding: 0;
-        }
-        .movie-card {
-            flex: 0 0 30%;
-            @media (min-width: $width-s) and (max-width: $width-m) {
-                flex: 0 0 100%;
-            }
-            @media (min-width: $width-m) and (max-width: $width-l) {
-                flex: 0 0 50%;
-            }
-        }
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.home-header__search {
+    grid-column: 2 / 3;
+}
+.home-header__modes {
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    @media (max-width: $width-m) {
+        margin-top: 20px;
+    }
+    span {
+        color: $black;
+        font-weight: bold;
+        font-size: inherit;
+    }
+}
+.switch {
+    background-color: $blue;
+    margin: 0 5px;
+    width: 60px;
+    height: 26px;
+    border-radius: 26px;
+    position: relative;
+    cursor: pointer;
+    transition: all .6s ease;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        transform: translateX(4px);
+        background-color: $white;
+        height: 21px;
+        width: 21px;
+        border-radius: 50%;
+        transition: all .4s ease;
+    }
+}
+.toFavs {
+    background-color: $green;
+    &::before {
+        transform: translateX(34px);
+    }
+}
+.home-content {
+    margin-top: 50px;
+    padding: 0 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    @media (max-width: $width-s) {
+        padding: 0;
+    }
+}
+.movie-card {
+    flex: 0 0 30%;
+    @media (min-width: $width-s) and (max-width: $width-m) {
+        flex: 0 0 100%;
+    }
+    @media (min-width: $width-m) and (max-width: $width-l) {
+        flex: 0 0 50%;
     }
 }

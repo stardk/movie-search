@@ -10,19 +10,19 @@
   @media (max-width: $width-s) {
     width: 80%;
   }
-  .search-input {
-    width: 80%;
-    height: 100%;
-    border: none;
-    background-color: inherit;
-    outline: none;
-  }
-  .search-submit {
-    width: 10%;
-    color: $dark-grey;
-    cursor: pointer;
-    &:hover {
-      color: $black;
-    }
+}
+.search-input {
+  width: 80%;
+  height: 100%;
+  border: none;
+  background-color: inherit;
+  outline: none;
+}
+.search-submit {
+  width: 10%;
+  color: $dark-grey;
+  cursor: pointer;
+  &:hover {
+    color: $black;
   }
 }

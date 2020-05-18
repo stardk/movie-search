@@ -28,48 +28,48 @@
     &:hover {
         border-color: $blue;
     }
-    .movie-info {
-        padding: 5px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .movie-info__poster {
-            height: 150px;
-            width: auto;
-            transition: all .3s ease;
-            &:hover {
-                transform: scale(2);
-            }
-        }
-        .movie-info__title {
-            margin-top: 5px;
-            text-align: center;
-            font-weight: 500;
-            color: $black;
-            text-decoration: none;
-            font-size: 24px;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-        .movie-info__year {
-            margin-top: 5px;
-            font-size: 18px;
-            color: $grey;
-        }
-        .movie-info__type {
-            margin-top: 5px;
-            font-size: 16px;
-            color: $black;
-        }
+}
+.movie-info {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.movie-info__poster {
+    height: 150px;
+    width: auto;
+    transition: all .3s ease;
+    &:hover {
+        transform: scale(2);
     }
-    .favs-add {
-        @include button-base($blue);
+}
+.movie-info__title {
+    margin-top: 5px;
+    text-align: center;
+    font-weight: 500;
+    color: $black;
+    text-decoration: none;
+    font-size: 24px;
+    &:hover {
+        text-decoration: underline;
     }
-    .favs-delete {
-        @include button-base($red);
-    }
-    .favs-added {
-        @include button-base($green);
-    }
+}
+.movie-info__year {
+    margin-top: 5px;
+    font-size: 18px;
+    color: $grey;
+}
+.movie-info__type {
+    margin-top: 5px;
+    font-size: 16px;
+    color: $black;
+}
+.favs-add {
+    @include button-base($blue);
+}
+.favs-delete {
+    @include button-base($red);
+}
+.favs-added {
+    @include button-base($green);
 }
